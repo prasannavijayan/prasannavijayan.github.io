@@ -1,0 +1,16 @@
+.layout_container {
+    @extend .flex;
+    @extend .flex-jcc;
+    @extend .flex-aic;
+    padding: 16px;
+    height: calc(100vh - 92px);
+    background-color: #212F3C;
+    .main_container {
+        border: 1px solid $_d4d;
+        width: 600px;
+        border-radius: 6px;
+        padding: 16px;
+        height: 200px;
+        background-color: white;
+    }
+}

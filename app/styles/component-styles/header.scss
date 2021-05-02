@@ -1,0 +1,31 @@
+header {
+    height: 60px;
+    box-shadow: 0px -1px 4px $_d4d;
+    @extend .flex-jcc;
+
+    a {
+        @extend .flex;
+        text-decoration: none;
+    }
+
+    > div {
+        width: 80%;
+        @extend .flex;
+        @extend .flex-jcsb;
+        @extend .flex-aic;
+
+        > span {
+            > .heading {
+                margin-left: 8px;
+            }
+        }
+    }
+    
+    .logo {
+        height: 35px;
+    }
+
+    .grey {
+        color: $_424;
+    }
+}

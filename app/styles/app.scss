@@ -1,0 +1,65 @@
+
+/** Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.font {
+    &-100 {
+        font-weight: 100;
+    }
+
+    &-400 {
+        font-weight: 400;
+    }
+
+    &-px36 {
+        font-size: 36px;
+    }
+
+    &-px24 {
+        font-size: 24px;
+    }
+}
+
+.width {
+    &-100 {
+        width: 100%;
+    }
+}
+
+/** Colors */
+$_d4d: #d4d4d4 !default;
+$_424: #424242 !default;
+
+/** Body */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.flex {
+    display: flex;
+
+    &-rdc {
+        flex-direction: column
+    }
+
+    &-jcc {
+        justify-content: center; 
+    }
+
+    &-aic {
+        align-items: center;
+    }
+    
+    &-jcsb {
+        justify-content: space-between
+    }
+}
+
+// Component
+@import "./component-styles/header";
+@import "./component-styles/visiting-card";
+
+// Styler
+@import "./component-styles/styler/visiting-card-page-layout";
