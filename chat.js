@@ -1,23 +1,25 @@
 // netlify/functions/chat.js
-// Secure proxy — keeps your Anthropic API key server-side only.
-// The browser calls /.netlify/functions/chat instead of api.anthropic.com directly.
+// Secure proxy — keeps ANTHROPIC_API_KEY server-side only.
+// Browser calls /.netlify/functions/chat
 
-export default async (request) => {
-  // Only allow POST
-  if (request.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405 });
+exports.handler = async (event) => {
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+
+  // Handle CORS preflight
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 204, headers: corsHeaders, body: '' };
   }
 
-  // CORS preflight
-  if (request.method === 'OPTIONS') {
-    return new Response(null, {
-      status: 204,
-      headers: corsHeaders(),
-    });
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, headers: corsHeaders, body: 'Method not allowed' };
   }
 
   try {
-    const body = await request.json();
+    const body = JSON.parse(event.body);
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -31,28 +33,17 @@ export default async (request) => {
 
     const data = await response.json();
 
-    return new Response(JSON.stringify(data), {
-      status: response.status,
-      headers: {
-        'Content-Type': 'application/json',
-        ...corsHeaders(),
-      },
-    });
+    return {
+      statusCode: response.status,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      body: JSON.stringify(data),
+    };
   } catch (err) {
     console.error('Proxy error:', err);
-    return new Response(JSON.stringify({ error: 'Proxy error', detail: err.message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json', ...corsHeaders() },
-    });
+    return {
+      statusCode: 500,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      body: JSON.stringify({ error: 'Proxy error', detail: err.message }),
+    };
   }
 };
-
-function corsHeaders() {
-  return {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-  };
-}
-
-export const config = { path: '/api/chat' };
