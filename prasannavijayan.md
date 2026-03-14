@@ -49,3 +49,15 @@ Based in **Chennai, India**. Open to:
 - 🏃 I run marathons
 - 🏸 I play competitive badminton
 - 📚 I'm an avid reader
+
+---
+
+## Tech Talks
+
+1. React meetup - presented talk on `Introduction to module federation with micro frontend` | Date: 26 Nov 2022
+
+--- 
+
+## Contributing back to college
+
+1. Talk on `Leverage AI Tools to explore IT opportunities` - Build a small react slide app with supabase to change content realtime from my mobile | Date: 18 Feb 2026

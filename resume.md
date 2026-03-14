@@ -47,6 +47,18 @@
 
 ---
 
+## Certifications
+
+Link: https://www.linkedin.com/in/prasannavijayan/details/certifications
+
+1. Start the UX Design Process: Empathize, Define, and Ideate | Issued Feb 2022Issued Feb 2022 | Credential ID BT3XRWJ6E23CCredential ID BT3XRWJ6E23C
+2. Foundations of User Experience (UX) Design | Issued Aug 2021Issued Aug 2021 | Credential ID TQY7KYN2VUY8Credential ID TQY7KYN2VUY8
+3. Build Wireframes and Low-Fidelity Prototypes | Issued Feb 2022Issued Feb 2022 | Credential ID K4NYSWEGSNMXCredential ID K4NYSWEGSNMX
+4. Conduct UX Research and Test Early Concepts | Issued Mar 2022Issued Mar 2022 | Credential ID DSARWG74RR7QCredential ID DSARWG74RR7Q
+5. Crash Course on Python | Issued Feb 2022Issued Feb 2022 | Credential ID 4CWB726RGUY2Credential ID 4CWB726RGUY2
+
+---
+
 ## Awards
 
 - Agility Through Empowerment
